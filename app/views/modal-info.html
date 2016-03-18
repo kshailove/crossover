@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3>Donor Details</h3>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item">First Name: {{infoFirstName}}</li>
+  <li class="list-group-item">Last Name: {{infoLastName}}</li>
+  <li class="list-group-item">Blood Group: {{infoBloodGroup}}</li>
+  <li class="list-group-item">Email: {{infoEmail}}</li>
+  <li class="list-group-item">Contact Number: {{infoContactNumber}}</li>
+</ul>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="showDetails()" ng-if="infoShowDetails">Show Details</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

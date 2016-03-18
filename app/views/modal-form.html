@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h3>Create A New Donor!</h3>
+</div>
+<div class="flash-message" ng-if="flash">
+    <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
+</div>
+<form name="form.userForm" ng-submit="submitForm()" novalidate>
+    <div class="modal-body" ng-if="showfields">
+        <!-- NAME -->
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstname" class="form-control" ng-model="firstname" required>
+            <p ng-show="form.userForm.firstname.$invalid && !form.userForm.firstname.$pristine" class="help-block">You first name is required.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastname" class="form-control" ng-model="lastname" required>
+            <p ng-show="form.userForm.lastname.$invalid && !form.userForm.lastname.$pristine" class="help-block">You first name is required.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="text" name="contact" class="form-control" ng-model="contact"  ng-pattern="/^(00|\+)?[0-9]{12}$/" required>
+            <p ng-show="form.userForm.contact.$invalid && !form.userForm.contact.$pristine" class="help-block">Enter a valid contact number</p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="email" required>
+            <p ng-show="form.userForm.email.$invalid && !form.userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+
+		<!-- BLOOD GROUP -->
+        <div class="form-group">
+            <label>Blood Group</label>
+			<select name="bloodgroup" class="form-control" ng-model="bloodgroup" ng-options="bg.bloodgroup for bg in bloodgroups" required></select>
+			<p ng-show="form.userForm.bloodgroup.$invalid && !form.userForm.bloodgroup.$pristine" class="help-block">You blood group is required.</p>
+<!--            <input type="text" name="bloodgroup" class="form-control" ng-model="bloodgroup" required>
+            <p ng-show="form.userForm.bloodgroup.$invalid && !form.userForm.bloodgroup.$pristine" class="help-block">You blood group is required.</p>
+-->
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid" ng-if="showfields">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

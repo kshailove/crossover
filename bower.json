@@ -1,0 +1,12 @@
+{
+  "name": "my-bower",
+  "description": "Bower sample",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
+    "socket.io-client": "^1.4.5",
+    "angular": "^1.5.1",
+    "angular-ui-router": "^0.2.18",
+    "angular-bootstrap": "0.9.0"
+  }
+}
